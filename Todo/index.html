@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Todo App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    button {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="h-screen flex w-full bg-gray-100">
+  <div class="bg-gray-200 w-[70%] m-auto h-[90%] rounded-2xl p-6">
+    <h1 class="text-center text-3xl mb-8 font-semibold">To Do List</h1>
+
+    <section class="flex flex-row gap-4 justify-center pb-8 border-b border-gray-500">
+      <input type="text" id="search" placeholder="Enter task" class="bg-white h-12 w-full max-w-md rounded-3xl pl-4 text-2xl shadow"/>
+      <button class="bg-cyan-400 hover:bg-cyan-500 h-12 w-36 rounded-2xl text-gray-700 text-xl addBtn">Add</button>
+    </section>
+
+    <main>
+      <div class="flex justify-center gap-4 mt-6">
+        <button id="showTodos" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Todo Tasks</button>
+        <button id="showDeleted" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Deleted Tasks</button>
+      </div>
+    </main>
+
+    <div class="showTodo todo mt-6 space-y-2"></div>
+
+    <div class="showDeleted hidden mt-6 space-y-2 text-xl pl-4">
+      <h2 class="text-red-600 font-semibold">Deleted Tasks:</h2>
+      <ul id="deletedList" class="list-disc ml-6 text-gray-700"></ul>
+    </div>
+  </div>
+
+  <script src="script.js">
+  
+  </script>
+</body>
+</html>
