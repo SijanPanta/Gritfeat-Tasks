@@ -1,69 +1,66 @@
-# React + TypeScript + Vite
+# Drag and Drop Between Two Containers (React + Tailwind)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project demonstrates how to **drag items between two containers** in React using **HTML5 Drag-and-Drop API**.  
+Each container maintains its own state, and when an item is dragged and dropped, it moves from one container to the other.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+1. **Two containers side by side** (`Container A` and `Container B`).
+2. **Independent state** for each container using `useState`.
+3. **Drag-and-drop support** using HTML5 events (`draggable`, `onDragStart`, `onDrop`, etc.).
+4. **Visual indication**:
+   - The item being dragged becomes semi-transparent (`opacity-50`).
+   - The dragged item gets a highlighted border.
+5. Items are visually distinct with borders, shadows, and spacing.
+6. Works with **TailwindCSS** for styling (can also be replaced with plain CSS).
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Technologies Used
+- React (with Hooks)
+- TypeScript (optional, can be plain JS)
+- TailwindCSS (for styling)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 📂 Project Structure
+src/
+│── components/
+│ └── DragDropContainers.tsx # Main component
+│── App.tsx
+│── index.tsx
+README.md
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚡ How It Works
+1. **State Management**  
+   - `containerA` and `containerB` store the items in each container.  
+   - `draggingItem` stores which item is currently being dragged.  
+   - `source` stores the container the item came from.  
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. **Dragging**  
+   - Items have `draggable` enabled.  
+   - On `onDragStart`, we store the item and its source container.  
+
+3. **Dropping**  
+   - Containers use `onDragOver` with `preventDefault()` so they accept drops.  
+   - On `onDrop`, the item is removed from the source and added to the target container.  
+
+4. **Visual Indication**  
+   - While dragging, the item appears faded (`opacity-50`) with a blue border.  
+
+---
+
+## ▶️ Usage
+
+### Install dependencies
+```bash
+npm install
+Run the project
+npm run dev
+open in browser
+
+Visit http://localhost:5173
