@@ -53,8 +53,7 @@ export default function Dashboard() {
   // Form states
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
-  const [editId, setEditId] = useState<number | null>(null);
-
+  const [, setEditId] = useState<number | null>(null);
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error fetching products</p>;
 
@@ -100,7 +99,7 @@ export default function Dashboard() {
           <Card key={p.id} className="p-4">
             <h3 className="font-bold">{p.title}</h3>
             <p className="text-sm">${p.price}</p>
-            <img src={p.image} alt={p.title} className="w-16"/>
+            <img src={p.image} alt={p.title} className="w-16" />
 
             <div className="flex gap-2 mt-2">
               {/* Update */}
