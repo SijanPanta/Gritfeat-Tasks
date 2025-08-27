@@ -1,0 +1,23 @@
+[
+  {
+    "id": "e4cd92c6-de4c-4212-aed6-86f387ee8bf8",
+    "action": "add",
+    "taskId": "11b72748-4cc2-4132-be65-5655e86e8293",
+    "timestamp": "2025-08-27T13:34:13.611Z",
+    "details": "Added task: Buy milk"
+  },
+  {
+    "id": "aa689951-109d-4fc6-99c3-b0344523dbc8",
+    "action": "list",
+    "taskId": null,
+    "timestamp": "2025-08-27T13:34:31.422Z",
+    "details": "Listed 1 tasks"
+  },
+  {
+    "id": "0c2df30f-780c-465d-8ade-de126290abe6",
+    "action": "update",
+    "taskId": "11b72748-4cc2-4132-be65-5655e86e8293",
+    "timestamp": "2025-08-27T13:35:19.437Z",
+    "details": "Updated title to: buy bread"
+  }
+]
