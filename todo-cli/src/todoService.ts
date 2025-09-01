@@ -22,7 +22,7 @@ function writeTodos(todos: Todo[]) {
   fs.writeFileSync(todosFile, JSON.stringify(todos, null, 2));
 }
 
-// CRUD
+
 export function addTask(title: string) {
   const todos = readTodos();
   const newTask: Todo = {

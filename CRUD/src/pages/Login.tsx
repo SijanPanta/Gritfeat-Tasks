@@ -13,7 +13,6 @@ export default function Login() {
     if (username === "admin" && password === "admin123") {
       localStorage.setItem("isAuth", "true");
 
-      // Dispatch custom event to notify App component that auth status changed
       window.dispatchEvent(new Event("authChange"));
 
       navigate("/dashboard");
@@ -39,7 +38,7 @@ export default function Login() {
           onChange={(e) => setPassword(e.target.value)}
           className="mb-2"
         />
-        {error && <p className="text-red-500 text-sm">{error}</p>}
+        {error &&<p className="text-red-500 text-sm">{error}</p>}
         <Button className="w-full mt-2" onClick={handleLogin}>
           Login
         </Button>
